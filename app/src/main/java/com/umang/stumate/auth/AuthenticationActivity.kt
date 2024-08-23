@@ -47,7 +47,7 @@ class AuthenticationActivity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
 
       val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-          .requestIdToken(getString(R.string.default_web_client_id))
+//          .requestIdToken(getString(R.string.default_web_client_id))
           .requestEmail()
           .build()
 
@@ -61,10 +61,10 @@ class AuthenticationActivity : AppCompatActivity() {
         editEmailIn=findViewById(R.id.editEmailIn)
         editPasswordIn=findViewById(R.id.editPasswordIn)
         backButton=findViewById(R.id.welcomeBackButton)
-
-        googleSign.setOnClickListener {
-            signIn()
-        }
+//
+//        googleSign.setOnClickListener {
+//            signIn()
+//        }
 
        backButton.setOnClickListener{
             val intent = Intent(this, GettingStartedActivity::class.java)
@@ -78,7 +78,7 @@ class AuthenticationActivity : AppCompatActivity() {
             val btnSignUp: Button = findViewById(R.id.btnName)
             val userText: TextView = findViewById(R.id.newUserText)
             val userTextSign:TextView=findViewById(R.id.newUserTextSign)
-            val oAuthText: TextView = findViewById(R.id.singInText)
+//            val oAuthText: TextView = findViewById(R.id.singInText)
 
             // Checking the Text
             if(newUserText.text.equals("Don't have an Account?")) {
@@ -89,7 +89,7 @@ class AuthenticationActivity : AppCompatActivity() {
                 btnSignUp.text = "\t\t\tSign up\t\t\t"
                 userText.text = "Already have an Account!"
                 userTextSign.text = "Sign in"
-                oAuthText.text = "Or Sign up with"
+//                oAuthText.text = "Or Sign up with"
 
             } else {
 
@@ -99,7 +99,7 @@ class AuthenticationActivity : AppCompatActivity() {
                 btnSignUp.text = "\t\t\tSign in\t\t\t"
                 userTextSign.text = "Sign up"
                 userText.text = "Don't have an Account?"
-                oAuthText.text = "Or Sign in with"
+//                oAuthText.text = "Or Sign in with"
 
             }
         }
@@ -146,7 +146,7 @@ class AuthenticationActivity : AppCompatActivity() {
           val btnSignUp: Button = findViewById(R.id.btnName)
           val userText: TextView = findViewById(R.id.newUserText)
           val userTextSign:TextView=findViewById(R.id.newUserTextSign)
-          val oAuthText: TextView = findViewById(R.id.singInText)
+//          val oAuthText: TextView = findViewById(R.id.singInText)
 
           // Checking the Text
           if(newUserText.text.equals("Don't have an Account?")) {
@@ -157,7 +157,7 @@ class AuthenticationActivity : AppCompatActivity() {
               btnSignUp.text = "\t\t\tSign up\t\t\t"
               userText.text = "Already have an Account!"
               userTextSign.text = "Sign in"
-              oAuthText.text = "Or Sign up with"
+//              oAuthText.text = "Or Sign up with"
 
           } else {
 
@@ -167,7 +167,7 @@ class AuthenticationActivity : AppCompatActivity() {
               btnSignUp.text = "\t\t\tSign in\t\t\t"
               userTextSign.text = "Sign up"
               userText.text = "Don't have an Account?"
-              oAuthText.text = "Or Sign in with"
+//              oAuthText.text = "Or Sign in with"
 
           }
       }
@@ -195,12 +195,12 @@ class AuthenticationActivity : AppCompatActivity() {
                 btnName.isEnabled = false
                 newUserTextSign.isEnabled = false
                 newUserText.isEnabled = false
-                googleSign.isEnabled = false
+//                googleSign.isEnabled = false
 
                 edtPassword.error = null
                 loadingProgress.visibility = View.VISIBLE
 
-                if(btnName.text.equals("\t\t\tSign in\t\t\t")) {
+                if(btnName.equals("\t\t\tSign in\t\t\t")) {
 
                     //Implement Sign in code here
                     auth.signInWithEmailAndPassword(
@@ -221,7 +221,7 @@ class AuthenticationActivity : AppCompatActivity() {
                                 btnName.isEnabled = true
                                 newUserTextSign.isEnabled = true
                                 newUserText.isEnabled = true
-                                googleSign.isEnabled = true
+//                                googleSign.isEnabled = true
 
                                 // If sign in fails, display a message to the user.
                                 loadingProgress.visibility = View.GONE
@@ -256,7 +256,7 @@ class AuthenticationActivity : AppCompatActivity() {
                                         btnName.isEnabled = true
                                         newUserTextSign.isEnabled = true
                                         newUserText.isEnabled = true
-                                        googleSign.isEnabled = true
+//                                        googleSign.isEnabled = true
 
 
                                         Toast.makeText(
@@ -295,7 +295,7 @@ class AuthenticationActivity : AppCompatActivity() {
                                             btnName.isEnabled = true
                                             newUserTextSign.isEnabled = true
                                             newUserText.isEnabled = true
-                                            googleSign.isEnabled = true
+//                                            googleSign.isEnabled = true
 
                                             // If sign in fails, display a message to the user.
                                             Toast.makeText(
@@ -322,7 +322,7 @@ class AuthenticationActivity : AppCompatActivity() {
                             btnName.isEnabled = true
                             newUserTextSign.isEnabled = true
                             newUserText.isEnabled = true
-                            googleSign.isEnabled = true
+//                            googleSign.isEnabled = true
 
                             Toast.makeText(
                                 this@AuthenticationActivity,
